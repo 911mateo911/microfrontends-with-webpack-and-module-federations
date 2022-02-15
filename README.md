@@ -12,7 +12,7 @@ steps:
 
 - for more info head out to the specific webpack configs
 
-Now there are still some errors present on the console but those can be fixed with some webpack configs, as i lost the .env files provided from CRA, also declare some modules if you are using typescript to not @ts-ignore the lazy imports
+Now there are still some errors present on the console but those can be fixed with some webpack configs, as i lost the .env files provided from CRA, also declare some modules if you are using typescript
 
 if you fail to `webpack serve` make sure that in your app tsconfig.json you have disabled the noEmit property under compilerOptions as it doesnt allow code to be compiled under isolatedModules or whatever stuff that i dont know
 
@@ -20,4 +20,4 @@ i modified the scripts from react-scripts to webpack serve, but feel free to use
 
 still this has a lot to improve because there are many usecases for example handling errors etc.So in plain words it acts as a script tag which imports code from a cdn but this imports directly from your app without the need of some external servers.
 
-you can share hooks, css files, whatever
+you can share hooks, css files, whatever, but make sure to also share the dependencies used, and mark them as singletons in your webpack files

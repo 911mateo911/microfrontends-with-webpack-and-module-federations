@@ -45,10 +45,19 @@ module.exports = {
                 './Navbar': './src/Navbar',
                 './Button': './src/Button'
             },
+            remotes: {
+                iUseTheNavbar: 'iUseTheNavbar@http://localhost:3000/remoteEntry.js'
+            },
+            shared: {
+                react: {
+                    singleton: true,
+                    eager: true,
+                    requiredVersion: require('./package.json').dependencies.react
+                }
+            }
         }),
         new HtmlWebpackPlugin({
-            template:
-                './public/index.html',
+            template: './public/index.html',
         }),
     ],
 };

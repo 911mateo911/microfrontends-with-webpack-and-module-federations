@@ -41,6 +41,16 @@ module.exports = {
                 remotes: {
                     iHaveNavbar: 'iHaveNavbar@http://localhost:4000/remoteEntry.js',
                 },
+                exposes: {
+                    './useCount': './src/useCount'
+                },
+                shared: {
+                    react: {
+                        singleton: true,
+                        eager: true,
+                        requiredVersion: require('./package.json').dependencies.react
+                    }
+                }
             }
         ),
         new HtmlWebpackPlugin({
